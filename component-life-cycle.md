@@ -8,11 +8,13 @@
 
 จะเริ่ม render จาก parent ไปยัง child และการ render จากเสร็จจาก child ก่อน
 
+```html
 <cmp-a>
     <cmp-b>
       <cmp-c></cmp-c>
     </cmp-b>
   </cmp-a>
+```
 
 1. cmp-a - componentWillLoad()
 2. cmp-b - componentWillLoad()
@@ -30,6 +32,7 @@
 
 `fetch()` จะคืนค่า promise ทำให้แน่ใจได้ว่ากลไก async จะได้ข้อมูลมาเพื่อใช้ในการ render 
 
+```ts
 componentWillLoad() {
   return fetch('/some-data.json')
     .then(response => response.json())
@@ -37,3 +40,4 @@ componentWillLoad() {
       this.content = data;
     });
 }
+```

@@ -5,6 +5,7 @@
 - การสั่ง dispatch event ทำผ่าน `.emit()` 
 - แน่นอนว่าสามารถฝากข้อมูลไปกับ event object ได้ด้วยเช่นกัน `.emit(object)` 
 
+```ts
 import { Event, EventEmitter } from '@stencil/core';
 
 ...
@@ -16,11 +17,13 @@ export class TodoList {
     this.todoCompleted.emit(todo);
   }
 }
+```
 
 ## @Listen(): การดักรับ Event 
 
 - เราสามารถใช้ `@Listen('event name')` กำหนดให้กับ method ใน Parent Component เพื่อดักรับ Event ที่ emit ออกมาจาก Child component ได้ 
 
+```ts
 import { Listen } from '@stencil/core';
 
 ...
@@ -31,9 +34,11 @@ export class TodoApp {
     console.log('Received the custom todoCompleted event: ', event.detail);
   }
 }
+```
 
 เรายังสามารถกำหนดชื่อของ Element และ event ที่เกิดแบบเจาะจงได้ด้วย 
 
+```ts
 import { Listen } from '@stencil/core';
 
 ...
@@ -44,9 +49,11 @@ export class TodoList {
     console.log('the body was scrolled', ev);
   }
 }
+```
 
 และยังสามารถใช้กับ keyboard event ได้เช่นเดียวกัน 
 
+```ts
 @Listen('keydown')
 handleKeyDown(ev){
   if(ev.keyCode === 40){
@@ -58,6 +65,7 @@ handleKeyDown(ev){
 handleUpArrow(ev){
   console.log('will fire when up arrow is pressed');
 }
+```
 
 ค่าที่ constant ของ keydown ที่มีให้คือ 
 
@@ -72,6 +80,7 @@ handleUpArrow(ev){
 
 ## วิธีใช้ใน JSX 
 
+```ts
 import { Event, EventEmitter } from '@stencil/core';
 
 ...
@@ -84,4 +93,6 @@ export class TodoList {
   }
 }
 
+
 <todo-list onTodoCompleted={ev => this.someMethod(ev)}></todo-list>
+```
