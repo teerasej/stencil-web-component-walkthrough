@@ -13,3 +13,7 @@
 - [JSX](https://github.com/teerasej/stencil-web-component-walkthrough/blob/master/jsx.md)
 - [User Input](https://github.com/teerasej/stencil-web-component-walkthrough/blob/master/user-input.md)
 - [Form](https://github.com/teerasej/stencil-web-component-walkthrough/blob/master/form.md)
+
+## Publish Web component
+
+- [Publish และการนำมาใช้](https://github.com/teerasej/stencil-web-component-walkthrough/blob/master/publish-and-use.md)
